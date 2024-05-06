@@ -1,4 +1,3 @@
-<!-- create  a simple portfolio website using HTML and CSS. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,45 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        #about {
+            background-color: #fff;
+        }
+        #about h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        #about p {
+            color: #555;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #contact {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+        #contact p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
-<style>
-    body{
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    #about{
-        background-color: #f4f4f4;
-        padding: 20px;
-        text-align: center;
-    }
-    #contact{
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-    }
-    h1{
-        margin: 0;
-        padding: 0;
-    }
-    p{
-        margin: 0;
-        padding: 0;
-    }
-
-</style>
 <body>
+    <header>
+        <h1>Furkan Bulut's Portfolio</h1>
+    </header>
+
     <section id="about">
-        <h1>Furkan Bulut</h1>
-        <br>
-        <h2>Özgeçmiş</h2>
-        <p>Bilgisayar Mühendisliği 2.sınıf öğrencisidir. Java , Python ,C# programlama dilleri üzerinde belirli bir seviyede kendini geliştirmiştir. TÜBİTAK 4007 Manisa Bilim Şenliğinde Sorumlu Rehber olarak görev almıştır. Bir Teknofest takımında proje geliştirme deneyimine sahiptir. Meşe bilişim şirketinde takım çalışması (Git) üzerine staj görmüştür. MCBÜ Bilgisayar Araştırma ve Uygulama merkezinde kısmı zamanlı olarak görev almaktadır. Görevi sürecinde Full Stack Web geliştirme yapmıştır. Veri bilimi, Makine öğrenmesi, Görüntü işleme ile ilgilenmekte ve bu alanda kariyer hedeflemektedir. MCBU Veri Topluluğu Proje Koordinatörlüğü yapmakta olup Teknofest SolarVizyom Görüntü İşleme Takımı Kaptanıdır. Topluluk bünyesinde 5 Tübitak projesinde 3 başarılı sonuç elde etmiştir.</p>
+        <h2>About Me</h2>
+        <p>Furkan Bulut is a 2nd-year Computer Engineering student. He has developed himself on Java, Python, and C# programming languages to a certain extent. He has served as a Responsible Guide at the TÜBİTAK 4007 Manisa Science Fair. He has experience in project development in a Teknofest team. He has completed an internship on teamwork (Git) at Meşe Informatics company. He works part-time at MCBÜ Computer Research and Application Center. During his tenure, he has done Full Stack Web development. He is interested in Data Science, Machine Learning, and Image Processing and aims to pursue a career in these fields. He is the Project Coordinator of the MCBU Data Community and the Captain of the Teknofest SolarVizyom Image Processing Team. He has achieved 3 successful results in 5 Tübitak projects within the community.</p>
     </section>
 
     <section id="contact">
-        <h1>İletişim</h1>
+        <h2>Contact Me</h2>
         <p>Email: furkanbtng@gmail.com</p>
     </section>
+
+    <footer>
+        <p>&copy; 2024 Furkan Bulut</p>
+    </footer>
 </body>
 </html>
