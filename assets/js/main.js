@@ -1,201 +1,151 @@
-/*==================== MENU SHOW Y HIDDEN ====================*/
-const navMenu = document.getElementById("nav-menu"),
-    navToggle = document.getElementById("nav-toggle"),
-    navClose = document.getElementById("nav-close");
+/**
+* Template Name: Personal - v2.1.0
+* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+!(function($) {
+  "use strict";
 
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
-if (navToggle) {
-    navToggle.addEventListener("click", () => {
-        navMenu.classList.add("show-menu");
-    });
-}
+  // Nav Menu
+  $(document).on('click', '.nav-menu a, .mobile-nav a', function(e) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var hash = this.hash;
+      var target = $(hash);
+      if (target.length) {
+        e.preventDefault();
 
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
-if (navClose) {
-    navClose.addEventListener("click", () => {
-        navMenu.classList.remove("show-menu");
-    });
-}
-
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll(".nav__link");
-
-function linkAction() {
-    const navMenu = document.getElementById("nav-menu");
-    // when we click on each nav__link, we remove the show menu class
-    navMenu.classList.remove("show-menu");
-}
-navLink.forEach((n) => n.addEventListener("click", linkAction));
-
-/*==================== ACCORDION SKILLS ====================*/
-const skillsContent = document.getElementsByClassName("skills__content"),
-    skillsHeader = document.querySelectorAll(".skills__header");
-
-function toggleSkills() {
-    let itemClass = this.parentNode.className;
-
-    for (i = 0; i < skillsContent.length; i++) {
-        skillsContent[i].className = "skills__content skills__close";
-    }
-
-    if (itemClass === "skills__content skills__close") {
-        this.parentNode.className = "skills__content skills__open";
-    }
-}
-
-skillsHeader.forEach((el) => {
-    el.addEventListener("click", toggleSkills);
-});
-
-/*==================== QUALIFICATION TABS ====================*/
-const tabs = document.querySelectorAll("[data-target]"),
-    tabContents = document.querySelectorAll("[data-content]");
-
-tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-        const target = document.querySelector(tab.dataset.target);
-
-        tabContents.forEach((tabContent) => {
-            tabContent.classList.remove("qualification__active");
-        });
-        target.classList.add("qualification__active");
-
-        tabs.forEach((tab) => {
-            tab.classList.remove("qualification__active");
-        });
-        tab.classList.add("qualification__active");
-    });
-});
-
-/*==================== SERVICES MODAL ====================*/
-const modalViews = document.querySelectorAll(".services__modal"),
-    modalBtns = document.querySelectorAll(".services__button"),
-    modalCloses = document.querySelectorAll(".services__modal-close");
-
-let modal = function (modalClick) {
-    modalViews[modalClick].classList.add("active-modal");
-};
-
-modalBtns.forEach((modalBtn, i) => {
-    modalBtn.addEventListener("click", () => {
-        modal(i);
-    });
-});
-
-modalCloses.forEach((modalClose) => {
-    modalClose.addEventListener("click", () => {
-        modalViews.forEach((modalView) => {
-            modalView.classList.remove("active-modal");
-        });
-    });
-});
-
-/*==================== PORTFOLIO SWIPER  ====================*/
-let swiperPortfolio = new Swiper(".portfolio__container", {
-    cssMode: true,
-    loop: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
-
-/*==================== TESTIMONIAL ====================*/
-let swiperTestimonial = new Swiper(".testimonial_container", {
-    loop: true,
-    grabCursor: true,
-    spaceBetween: 48,
-
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        dynamicBullets: true,
-    },
-    breakpoints: {
-        568: {
-            slidePerView: 2,
-        },
-    },
-});
-
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll("section[id]");
-
-function scrollActive() {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach((current) => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute("id");
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document
-                .querySelector(".nav__menu a[href*=" + sectionId + "]")
-                .classList.add("active-link");
-        } else {
-            document
-                .querySelector(".nav__menu a[href*=" + sectionId + "]")
-                .classList.remove("active-link");
+        if ($(this).parents('.nav-menu, .mobile-nav').length) {
+          $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+          $(this).closest('li').addClass('active');
         }
+
+        if (hash == '#header') {
+          $('#header').removeClass('header-top');
+          $("section").removeClass('section-show');
+          return;
+        }
+
+        if (!$('#header').hasClass('header-top')) {
+          $('#header').addClass('header-top');
+          setTimeout(function() {
+            $("section").removeClass('section-show');
+            $(hash).addClass('section-show');
+          }, 350);
+        } else {
+          $("section").removeClass('section-show');
+          $(hash).addClass('section-show');
+        }
+
+        if ($('body').hasClass('mobile-nav-active')) {
+          $('body').removeClass('mobile-nav-active');
+          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+          $('.mobile-nav-overly').fadeOut();
+        }
+
+        return false;
+
+      }
+    }
+  });
+
+  // Activate/show sections on load with hash links
+  if (window.location.hash) {
+    var initial_nav = window.location.hash;
+    if ($(initial_nav).length) {
+      $('#header').addClass('header-top');
+      $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+      $('.nav-menu, .mobile-nav').find('a[href="' + initial_nav + '"]').parent('li').addClass('active');
+      setTimeout(function() {
+        $("section").removeClass('section-show');
+        $(initial_nav).addClass('section-show');
+      }, 350);
+    }
+  }
+
+  // Mobile Navigation
+  if ($('.nav-menu').length) {
+    var $mobile_nav = $('.nav-menu').clone().prop({
+      class: 'mobile-nav d-lg-none'
     });
-}
+    $('body').append($mobile_nav);
+    $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
+    $('body').append('<div class="mobile-nav-overly"></div>');
 
-window.addEventListener("scroll", scrollActive);
+    $(document).on('click', '.mobile-nav-toggle', function(e) {
+      $('body').toggleClass('mobile-nav-active');
+      $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+      $('.mobile-nav-overly').toggle();
+    });
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/
-function scrollHeader() {
-    const nav = document.getElementById("header");
-    if (this.scrollY >= 80) nav.classList.add("scroll-header");
-    else nav.classList.remove("scroll-header");
-}
+    $(document).click(function(e) {
+      var container = $(".mobile-nav, .mobile-nav-toggle");
+      if (!container.is(e.target) && container.has(e.target).length === 0) {
+        if ($('body').hasClass('mobile-nav-active')) {
+          $('body').removeClass('mobile-nav-active');
+          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+          $('.mobile-nav-overly').fadeOut();
+        }
+      }
+    });
+  } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
+    $(".mobile-nav, .mobile-nav-toggle").hide();
+  }
 
-window.addEventListener("scroll", scrollHeader);
+  // jQuery counterUp
+  $('[data-toggle="counter-up"]').counterUp({
+    delay: 10,
+    time: 1000
+  });
 
-/*==================== SHOW SCROLL UP ====================*/
-function scrollUp() {
-    const scrollUp = document.getElementById("scroll-up");
-    if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
-    else scrollUp.classList.remove("show-scroll");
-}
+  // Skills section
+  $('.skills-content').waypoint(function() {
+    $('.progress .progress-bar').each(function() {
+      $(this).css("width", $(this).attr("aria-valuenow") + '%');
+    });
+  }, {
+    offset: '80%'
+  });
 
-window.addEventListener("scroll", scrollUp);
+  // Testimonials carousel (uses the Owl Carousel library)
+  $(".testimonials-carousel").owlCarousel({
+    autoplay: true,
+    dots: true,
+    loop: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2
+      },
+      900: {
+        items: 3
+      }
+    }
+  });
 
-/*==================== DARK LIGHT THEME ====================*/
-const themeButton = document.getElementById("theme-button");
-const darkTheme = "dark-theme";
-const iconTheme = "uil-sun";
+  // Porfolio isotope and filter
+  $(window).on('load', function() {
+    var portfolioIsotope = $('.portfolio-container').isotope({
+      itemSelector: '.portfolio-item',
+      layoutMode: 'fitRows'
+    });
 
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
+    $('#portfolio-flters li').on('click', function() {
+      $("#portfolio-flters li").removeClass('filter-active');
+      $(this).addClass('filter-active');
 
-const getCurrentTheme = () =>
-    document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getCurrentIcon = () =>
-    document.body.classList.contains(iconTheme) ? "uil-moon" : "uil-sun";
+      portfolioIsotope.isotope({
+        filter: $(this).data('filter')
+      });
+    });
 
-if (selectedTheme) {
-    document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-        darkTheme
-    );
-    themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
-        iconTheme
-    );
-}
+  });
 
-//activate / deactivate the theme manually with the button
-themeButton.addEventListener("click", () => {
-    //add or remove dark / icon theme
-    document.body.classList.toggle(darkTheme);
-    themeButton.classList.toggle(iconTheme);
+  // Initiate venobox (lightbox feature used in portofilo)
+  $(document).ready(function() {
+    $('.venobox').venobox();
+  });
 
-    //we save the theme and the current icon so that the user choose
-    localStorage.setItem("selected-theme", getCurrentTheme());
-    localStorage.setItem("selected-icon", getCurrentIcon());
-});
+})(jQuery);
