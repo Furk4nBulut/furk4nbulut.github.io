@@ -6,8 +6,6 @@
     <title>Map Tracker Yürüyüş Aktivitesi Uygulaması</title>
     <link rel="icon" href="assets/map-tracker/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="assets/map-tracker/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
         :root {
@@ -15,6 +13,9 @@
             --basarsoft-color-light: #00A5FF;
             --white: #ffffff;
             --gray-light: #f4f4f4;
+            --github-color: #333;
+            --linkedin-color: #0077b5;
+            --email-color: #c71667;
         }
         body {
             font-family: Arial, sans-serif;
@@ -23,28 +24,54 @@
             padding: 0;
             color: #333;
             background-color: #e9ecef;
+            padding-top: 130px;
+            padding-bottom: 95px;
         }
         header {
             background: linear-gradient(135deg, var(--basarsoft-color), var(--basarsoft-color-light));
             color: #fff;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 1.5em;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         header img {
-            max-width: 70px;
+            max-width: 50px;
             margin-right: 15px;
             border-radius: 50%;
             border: 2px solid var(--white);
+        }
+        header nav {
+            margin-top: 10px;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        header nav ul li {
+            display: inline;
+        }
+        header nav ul li a {
+            color: var(--white);
+            font-size: 1.2em;
+        }
+        header nav ul li a:hover {
+            color: var(--basarsoft-color-light);
         }
         .container {
             max-width: 1200px;
@@ -95,25 +122,6 @@
         a:hover {
             text-decoration: underline;
         }
-        footer {
-            background: linear-gradient(135deg, var(--basarsoft-color), var(--basarsoft-color-light));
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-        }
-        footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        footer ul li {
-            display: inline;
-            margin: 0 15px;
-        }
         .icon {
             margin-right: 8px;
             color: var(--basarsoft-color);
@@ -136,48 +144,60 @@
         .btn:hover {
             background-color: var(--basarsoft-color-light);
         }
-
         footer {
-    background: linear-gradient(135deg, var(--basarsoft-color), var(--basarsoft-color-light));
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-footer ul li {
-    display: inline;
-}
-footer ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-footer ul li a:hover {
-    text-decoration: underline;
-}
-
+            background: linear-gradient(135deg, var(--basarsoft-color), var(--basarsoft-color-light));
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        footer ul li {
+            display: inline;
+        }
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
-<body>
+
     <header>
         <h1>
-            <img src="assets/map-tracker/logo.png" alt="Logo" style="vertical-align: middle; max-width: 70px; margin-right: 10px;">
+            <img src="assets/map-tracker/logo.png" alt="Logo"l>
             Map Tracker Yürüyüş Aktivitesi Uygulaması
         </h1>
-    </header>
+        <hr>
+        <nav>
+<!-- tanıtım seection yönlendime-->
+            <ul>
+                <li><a href="#tanitim">Tanıtım</a></li>
+                <li><a href="#ozellikler">Özellikler</a></li>
+                <li><a href="#kurulum">Kurulum</a></li>
+                <li><a href="#kaynaklar-ve-araclar">Kaynaklar ve Araçlar</a></li>
+                <li><a href="#gelistirici-hakkinda">Geliştirici Hakkında</a></li>
+            </ul>
+        </nav>
     
-    <div class="container">
+    </header>
+    <body>
+
+    <div class="container" id="tanitim">
         <h2><i class="fa fa-info-circle" aria-hidden="true"></i> Tanıtım</h2>
         <p>Bu proje, Flutter kullanarak geliştirilen bir yürüyüş aktivitesi uygulamasıdır. Uygulama, kullanıcıların yürüyüş/koşu aktivitelerini başlatıp bitirmelerini, bu aktivitelerin süresini ve mesafesini hesaplamalarını ve verileri SQLite/SpatiaLite veritabanına kaydetmelerini sağlar. Ayrıca geçmiş aktiviteleri görüntüleme ve detaylarını inceleme imkanı sunar. Uygulamanın diğer önemli özellikleri arasında şunlar bulunmaktadır:</p>
         <ul>
@@ -197,7 +217,7 @@ footer ul li a:hover {
     
        
         </div>
-        <div class="container">
+        <div class="container" id="ozellikler">
         <h2><i class="fas fa-star icon"></i>Özellikler</h2>
 
         <div class="section">
@@ -251,7 +271,7 @@ footer ul li a:hover {
         </div>
         </div>
 <!-- Kurulum section-->
-<div class="container">
+<div class="container" id="kurulum">
     <h2><i class="fas fa-download icon"></i>Kurulum</h2>
     <p>Projeyi klonlayın ve gerekli paketleri yükleyin.</p>
     <pre class="code-block">
@@ -272,7 +292,7 @@ footer ul li a:hover {
         <!-- kaynaklar ve araçlar section-->
 
 
-        <div class="container">
+        <div class="container" id="kaynaklar-ve-araclar">
 
 
         <h2><i class="fas fa-tools icon"></i>Kaynaklar ve Araçlar</h2>
@@ -285,7 +305,7 @@ footer ul li a:hover {
     </div>
 
     <!-- about developer -->
-    <div class="container">
+    <div class="container" id="gelistirici-hakkinda">
         <h2><i class="fas fa-user icon"></i>Geliştirici Hakkında</h2>
         <p>Merhaba, ben <strong>Furkan Bulut</strong>.Bilgisayar Mühendisliği öğrencisiyim. Bu projeyi Flutter öğrenirken geliştirdim. Flutter ile mobil uygulama geliştirme konusunda kendimi geliştirmek istiyorum. Projem hakkında geri bildirimlerinizi paylaşarak bana destek olabilirsiniz.</p>
         <div class="note">
@@ -304,13 +324,8 @@ footer ul li a:hover {
             </p>
         </div>
     </div>
+</body>
 
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <footer>
         <p>&copy; 2024 Map Tracker Uygulaması. Tüm Hakları Saklıdır.</p>
         <ul>
@@ -319,6 +334,5 @@ footer ul li a:hover {
             <li><a href="mailto:furkan.bulut@example.com"><i class="fas fa-envelope icon"></i> Email</a></li>
         </ul>
     </footer>
-    
 </body>
 </html>
