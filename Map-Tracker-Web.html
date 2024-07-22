@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
-       :root {
+        :root {
             --basarsoft-color: #02205C;
             --basarsoft-color-light: #00A5FF;
             --white: #ffffff;
@@ -24,7 +24,8 @@
             padding: 0;
             color: #333;
             background-color: #e9ecef;
-            padding-bottom: 95px; /* Footer için alt boşluk */
+            padding-top: 130px;
+            padding-bottom: 95px;
         }
         header {
             background: linear-gradient(135deg, var(--basarsoft-color), var(--basarsoft-color-light));
@@ -37,8 +38,6 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            height: 70px;
-            margin-bottom: 20px; /* Navbar alt boşluğu */
         }
         header h1 {
             margin: 0;
@@ -81,8 +80,6 @@
             background: var(--white);
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            padding-top: 20px;
-            margin-top: 90px; /* Header ve içeriği ayırmak için boşluk */
         }
         h2 {
             color: var(--basarsoft-color);
@@ -130,7 +127,7 @@
             color: var(--basarsoft-color);
         }
         img {
-            max-width: 100%;
+            max-width: 5%;
             height: auto;
         }
         .btn {
@@ -177,49 +174,54 @@
         footer ul li a:hover {
             text-decoration: underline;
         }
+
+        /* Responsive Styles */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.2em;
+                font-size: 1.1em;
             }
             header nav ul {
                 flex-direction: column;
                 gap: 10px;
             }
             header nav ul li a {
-                font-size: 1em;
+                font-size: 0.8em;
             }
             .container {
                 padding: 15px;
             }
             .section img {
-                max-width: 100%;
+                max-width: 50%;
             }
             .note, .highlight {
                 padding: 15px;
             }
             .btn {
                 padding: 8px 16px;
-                font-size: 0.9em;
+                font-size: 0.7em;
             }
         }
         @media (max-width: 480px) {
             header {
-                padding: 80px;
+                padding: 8px;
             }
             header h1 {
-                font-size: 1em;
+                font-size: 0.8em;
             }
             header nav ul {
                 gap: 5px;
             }
             header nav ul li a {
-                font-size: 0.9em;
+                font-size: 0.7em;
             }
             .container {
                 padding: 10px;
             }
             h2 {
-                font-size: 1.5em;
+                font-size: 1.3em;
+            }
+            .section img {
+                max-width: 50%;
             }
             .note, .highlight {
                 padding: 10px;
@@ -248,7 +250,7 @@
                 <li><a href="#gelistirici-hakkinda">Geliştirici Hakkında</a></li>
             </ul>
         </nav>
-    
+
     </header>
     <body>
 
@@ -269,8 +271,8 @@
             <p><strong>Not:</strong> Bu proje benim ilk Flutter projem olup, 0'dan öğrenerek 3 haftada geliştirdiğim bir çalışmadır. Proje süresince edindiğim deneyimleri ve karşılaştığım zorlukları bu uygulama üzerinde pratiğe dökerek kendimi geliştirdim. Bu nedenle, projede bazı eksiklikler veya hatalar olabilir. Geri bildirimleriniz benim için çok değerli.</p>
         </div>
     </div>
-    
-       
+
+
         </div>
         <div class="container" id="ozellikler">
         <h2><i class="fas fa-star icon"></i>Özellikler</h2>
@@ -320,7 +322,7 @@
             <img src="assets/map-tracker/img_1.png" alt="Firebase Veritabanı">
             <img src="assets/map-tracker/img_2.png" alt="Firebase Veritabanı">
         </div>
-       
+
         <div class="highlight">
             <p><strong>Önemli Not:</strong> Bu projenin son aşamasında bazı hatalar alınabilir. Hataların giderilmesi ve uygulamanın geliştirilmesi amacıyla geri bildirimlerinizi paylaşmanız önemlidir.</p>
         </div>
@@ -366,14 +368,14 @@
         <div class="note">
             <p>     <h2><i class="fas fa-users icon"></i>Katkıda Bulunanlar</h2>
                 <p><a href="https://github.com/Furk4nBulut/Map-Tracker-Flutter">Furkan Bulut</a></p>
-        
+
                 <h2><i class="fas fa-envelope icon"></i>İletişim</h2>
                 <ul>
                     <li><a href="mailto:Furkanbtng@gmail.com">Gmail</a></li>
                     <li><a href="https://www.linkedin.com/in/furkanblt/">LinkedIn</a></li>
                     <li><a href="https://furk4nbulut.github.io/">Website</a></li>
                 </ul>
-        
+
                 <p>Herhangi bir sorun veya öneriniz olursa lütfen benimle iletişime geçin.</p>
 
             </p>
