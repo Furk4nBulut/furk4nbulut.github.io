@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map Tracker Yürüyüş Aktivitesi Uygulaması</title>
-     <link rel="icon" href="assets/map-tracker/logo.png">
-
-
+    <link rel="icon" href="assets/map-tracker/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --basarsoft-color: #02205C;
+            --basarsoft-color-light: #00A5FF;
+        }
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -18,11 +20,11 @@
             background-color: #e9ecef;
         }
         header {
-            background: linear-gradient(135deg, #004aad, #0056b3);
+            background: linear-gradient(135deg, var(--basarsoft-color), var(--basarsoft-color-light));
             color: #fff;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         header h1 {
             margin: 0;
@@ -34,11 +36,11 @@
             padding: 20px;
             background: #fff;
             border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            color: #004aad;
-            border-bottom: 2px solid #004aad;
+            color: var(--basarsoft-color);
+            border-bottom: 2px solid var(--basarsoft-color);
             padding-bottom: 10px;
         }
         .section {
@@ -48,23 +50,15 @@
             display: block;
             margin: 10px auto;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .note {
+        .note, .highlight {
             background: #eaf4ff;
-            border-left: 5px solid #004aad;
+            border-left: 5px solid var(--basarsoft-color);
             padding: 15px;
             margin: 20px 0;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .highlight {
-            background-color: #eaf4ff;
-            border-left: 5px solid #004aad;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         pre {
             background: #f4f4f4;
@@ -76,21 +70,21 @@
             word-wrap: break-word;
         }
         a {
-            color: #004aad;
+            color: var(--basarsoft-color);
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
         footer {
-            background: linear-gradient(135deg, #004aad, #0056b3);
+            background: linear-gradient(135deg, var(--basarsoft-color), var(--basarsoft-color-light));
             color: #fff;
             text-align: center;
             padding: 15px 0;
             position: fixed;
             bottom: 0;
             width: 100%;
-            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
         footer ul {
             list-style: none;
@@ -103,7 +97,7 @@
         }
         .icon {
             margin-right: 8px;
-            color: #004aad;
+            color: var(--basarsoft-color);
         }
         img {
             max-width: 5%;
@@ -112,18 +106,22 @@
 </head>
 <body>
     <header>
-        <h1>Map Tracker Yürüyüş Aktivitesi Uygulaması</h1>
+        <h1>
+            <img src="assets/map-tracker/logo.png" alt="Logo" style="vertical-align: middle; max-width: 70px; margin-right: 10px;">
+            Map Tracker Yürüyüş Aktivitesi Uygulaması
+        </h1>
     </header>
+    
     <div class="container">
         <p>Bu proje, Flutter kullanarak geliştirilen bir yürüyüş aktivitesi uygulamasıdır. Uygulama, kullanıcıların yürüyüş/koşu aktivitelerini başlatıp bitirmelerini, bu aktivitelerin süresini ve mesafesini hesaplamalarını, ve verileri SQLite/SpatiaLite veritabanına kaydetmelerini sağlar. Ayrıca geçmiş aktiviteleri görüntüleme ve detaylarını inceleme imkanı sunar.</p>
         <div class="note">
             <p><strong>Not:</strong> İlk Flutter projem olup 0'dan öğrenerek 3 haftada geliştirdiğim projedir. Yazılan kodlar profesyonel bir yapıda olmaması muhtemeldir.</p>
         </div>
         <div class="section">
-
-        <img src="assets/map-tracker/uygulama.png" alt="uygulama" style="max-width:50%">
+            <img src="assets/map-tracker/uygulama.png" alt="uygulama" style="max-width:50%">
         </div>
-
+        </div>
+        <div class="container">
         <h2><i class="fas fa-star icon"></i>Özellikler</h2>
 
         <div class="section">
@@ -168,47 +166,54 @@
             <h3><i class="fas fa-database icon"></i>7. Firebase ve Firestore Veritabanı</h3>
             <p>Firebase ve Firestore yapılandırması ve veri formatları ile ilgili örnek kayıtlar ve ekran görüntüleri proje içine eklenmelidir.</p>
             <img src="assets/map-tracker/img.png" alt="Firebase Veritabanı">
-            <img src="assets/map-tracker/img_1.png" alt="Firestore Veritabanı">
-            <img src="assets/map-tracker/img_2.png" alt="Firebase Örnek Kayıtlar">
+            <img src="assets/map-tracker/img_1.png" alt="Firebase Veritabanı">
+            <img src="assets/map-tracker/img_2.png" alt="Firebase Veritabanı">
+        </div>
+       
+        <div class="highlight">
+            <p><strong>Önemli Not:</strong> Bu projenin son aşamasında bazı hatalar alınabilir. Hataların giderilmesi ve uygulamanın geliştirilmesi amacıyla geri bildirimlerinizi paylaşmanız önemlidir.</p>
+        </div>
         </div>
 
-        <div class="section">
-            <h3><i class="fas fa-file-alt icon"></i>8. Proje Teslimi</h3>
-            <p>Çalışabilir APK dosyası ile birlikte projeyi teslim etmeniz gerekmektedir.</p>
-            <a href="assets/map-tracker/Map.Tracker.apk" target="_blank">Map Tracker APK'sını İndir</a>
-        </div>
+        <div class="container">
 
-        <h2><i class="fas fa-cogs icon"></i>Kurulum</h2>
-        <ol>
-            <li>GitHub'dan projeyi klonlayın:
-                <pre><code>git clone https://github.com/Furk4nBulut/Map-Tracker-Flutter</code></pre>
-            </li>
-            <li>Gerekli paketleri yükleyin:
-                <pre><code>flutter pub get</code></pre>
-            </li>
-            <li>Firebase yapılandırmasını yapın ve <code>google-services.json</code> dosyasını ilgili dizine ekleyin.</li>
-            <li>Uygulamayı çalıştırın:
-                <pre><code>flutter run</code></pre>
-            </li>
-        </ol>
 
-        <h2><i class="fas fa-users icon"></i>Katkıda Bulunanlar</h2>
-        <p><a href="https://github.com/Furk4nBulut/Map-Tracker-Flutter">Furkan Bulut</a></p>
-
-        <h2><i class="fas fa-envelope icon"></i>İletişim</h2>
+        <h2><i class="fas fa-tools icon"></i>Kaynaklar ve Araçlar</h2>
         <ul>
-            <li><a href="mailto:Furkanbtng@gmail.com">Gmail</a></li>
-            <li><a href="https://www.linkedin.com/in/furkanblt/">LinkedIn</a></li>
-            <li><a href="https://furk4nbulut.github.io/">Website</a></li>
+            <li><i class="fas fa-external-link-alt icon"></i><a href="https://flutter.dev/">Flutter</a></li>
+            <li><i class="fas fa-external-link-alt icon"></i><a href="https://firebase.google.com/">Firebase</a></li>
+            <li><i class="fas fa-external-link-alt icon"></i><a href="https://pub.dev/packages/sqflite">sqflite</a></li>
+            <li><i class="fas fa-external-link-alt icon"></i><a href="https://openweathermap.org/api">OpenWeatherMap API</a></li>
         </ul>
-
-        <p>Herhangi bir sorun veya öneriniz olursa lütfen benimle iletişime geçin.</p>
     </div>
+
+    <!-- about developer -->
+    <div class="container">
+        <h2><i class="fas fa-user icon"></i>Geliştirici Hakkında</h2>
+        <p>Merhaba, ben <strong>Furkan Bulut</strong>.Bilgisayar Mühendisliği öğrencisiyim. Bu projeyi Flutter öğrenirken geliştirdim. Flutter ile mobil uygulama geliştirme konusunda kendimi geliştirmek istiyorum. Projem hakkında geri bildirimlerinizi paylaşarak bana destek olabilirsiniz.</p>
+        <div class="note">
+            <p>     <h2><i class="fas fa-users icon"></i>Katkıda Bulunanlar</h2>
+                <p><a href="https://github.com/Furk4nBulut/Map-Tracker-Flutter">Furkan Bulut</a></p>
+        
+                <h2><i class="fas fa-envelope icon"></i>İletişim</h2>
+                <ul>
+                    <li><a href="mailto:Furkanbtng@gmail.com">Gmail</a></li>
+                    <li><a href="https://www.linkedin.com/in/furkanblt/">LinkedIn</a></li>
+                    <li><a href="https://furk4nbulut.github.io/">Website</a></li>
+                </ul>
+        
+                <p>Herhangi bir sorun veya öneriniz olursa lütfen benimle iletişime geçin.</p>
+
+            </p>
+        </div>
+    </div>
+
+
     <br>
     <br>
     <br>
     <footer>
-        <p>&copy; 2024 Furkan Bulut. Tüm hakları saklıdır.</p>
+        <p>&copy; 2024 Map Tracker Uygulaması. Tüm Hakları Saklıdır.</p>
     </footer>
 </body>
 </html>
