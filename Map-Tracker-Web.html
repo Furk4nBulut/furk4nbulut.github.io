@@ -6,10 +6,15 @@
     <title>Map Tracker Yürüyüş Aktivitesi Uygulaması</title>
     <link rel="icon" href="assets/map-tracker/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="assets/map-tracker/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
         :root {
             --basarsoft-color: #02205C;
             --basarsoft-color-light: #00A5FF;
+            --white: #ffffff;
+            --gray-light: #f4f4f4;
         }
         body {
             font-family: Arial, sans-serif;
@@ -25,16 +30,27 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
         }
         header h1 {
             margin: 0;
             font-size: 2.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header img {
+            max-width: 70px;
+            margin-right: 15px;
+            border-radius: 50%;
+            border: 2px solid var(--white);
         }
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
-            background: #fff;
+            background: var(--white);
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         }
@@ -42,20 +58,22 @@
             color: var(--basarsoft-color);
             border-bottom: 2px solid var(--basarsoft-color);
             padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
         }
         .section {
             margin-bottom: 40px;
         }
         .section img {
             display: block;
-            margin: 10px auto;
+            margin: 20px auto;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .note, .highlight {
             background: #eaf4ff;
             border-left: 5px solid var(--basarsoft-color);
-            padding: 15px;
+            padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -63,11 +81,12 @@
         pre {
             background: #f4f4f4;
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 15px;
             border-radius: 8px;
             overflow-x: auto;
             white-space: pre-wrap;
             word-wrap: break-word;
+            font-family: 'Courier New', Courier, monospace;
         }
         a {
             color: var(--basarsoft-color);
@@ -80,7 +99,7 @@
             background: linear-gradient(135deg, var(--basarsoft-color), var(--basarsoft-color-light));
             color: #fff;
             text-align: center;
-            padding: 15px 0;
+            padding: 20px 0;
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -93,7 +112,7 @@
         }
         footer ul li {
             display: inline;
-            margin: 0 10px;
+            margin: 0 15px;
         }
         .icon {
             margin-right: 8px;
@@ -101,7 +120,53 @@
         }
         img {
             max-width: 5%;
+            height: auto;
         }
+        .btn {
+            background-color: var(--basarsoft-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: var(--basarsoft-color-light);
+        }
+
+        footer {
+    background: linear-gradient(135deg, var(--basarsoft-color), var(--basarsoft-color-light));
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+footer ul li {
+    display: inline;
+}
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
@@ -244,8 +309,16 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
     <footer>
         <p>&copy; 2024 Map Tracker Uygulaması. Tüm Hakları Saklıdır.</p>
+        <ul>
+            <li><a href="https://github.com/Furk4nBulut" target="_blank"><i class="fab fa-github icon"></i> GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/furkanbulut/" target="_blank"><i class="fab fa-linkedin icon"></i> LinkedIn</a></li>
+            <li><a href="mailto:furkan.bulut@example.com"><i class="fas fa-envelope icon"></i> Email</a></li>
+        </ul>
     </footer>
+    
 </body>
 </html>
