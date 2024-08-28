@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map Tracker Yürüyüş Aktivitesi Uygulaması</title>
-    <link rel="icon" href="assets/map-tracker/logo.png">
+    <link rel="icon" href="old/assets/map-tracker/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
@@ -236,7 +236,7 @@
 
     <header>
         <h1>
-            <img src="assets/map-tracker/logo.png" alt="Logo"l>
+            <img src="old/assets/map-tracker/logo.png" alt="Logo" l>
             Map Tracker Yürüyüş Aktivitesi Uygulaması
         </h1>
         <hr>
@@ -265,7 +265,7 @@
             <li>Gelişmiş raporlama ve istatistik özellikleri ile kullanıcı performansının izlenmesi.</li>
         </ul>
         <div class="section">
-            <img src="assets/map-tracker/uygulama.png" alt="uygulama" style="max-width:50%">
+            <img src="old/assets/map-tracker/uygulama.png" alt="uygulama" style="max-width:50%">
         </div>
         <div class="note">
             <p><strong>Not:</strong> Bu proje benim ilk Flutter projem olup, 0'dan öğrenerek 3 haftada geliştirdiğim bir çalışmadır. Proje süresince edindiğim deneyimleri ve karşılaştığım zorlukları bu uygulama üzerinde pratiğe dökerek kendimi geliştirdim. Bu nedenle, projede bazı eksiklikler veya hatalar olabilir. Geri bildirimleriniz benim için çok değerli.</p>
@@ -280,47 +280,47 @@
         <div class="section">
             <h3><i class="fas fa-mobile-alt icon"></i>1. Splash Ekranı</h3>
             <p>Uygulama açıldığında 2-3 saniyelik bir logo animasyonu gösterilir.</p>
-            <img src="assets/map-tracker/Screenshot_20240719_125540.png" alt="Splash Ekranı">
+            <img src="old/assets/map-tracker/Screenshot_20240719_125540.png" alt="Splash Ekranı">
         </div>
 
         <div class="section">
             <h3><i class="fas fa-user icon"></i>2. Giriş/Kayıt Ekranı</h3>
             <p>Google hesabı ile giriş (authentication) yapılır. Kullanıcılar mail, ad, soyad, şifre gibi bilgilerle kayıt olabilir. Kayıt bilgileri Firebase üzerinde tutulur ve login aşamasında bu bilgilerle giriş yapılabilir.</p>
-            <img src="assets/map-tracker/Screenshot_20240719_125557.png" alt="Giriş Ekranı">
-            <img src="assets/map-tracker/Screenshot_20240719_125604.png" alt="Kayıt Ekranı">
-            <img src="assets/map-tracker/Screenshot_20240719_125610.png" alt="Giriş/Kayıt Ekranı">
+            <img src="old/assets/map-tracker/Screenshot_20240719_125557.png" alt="Giriş Ekranı">
+            <img src="old/assets/map-tracker/Screenshot_20240719_125604.png" alt="Kayıt Ekranı">
+            <img src="old/assets/map-tracker/Screenshot_20240719_125610.png" alt="Giriş/Kayıt Ekranı">
         </div>
 
         <div class="section">
             <h3><i class="fas fa-tachometer-alt icon"></i>3. Dashboard</h3>
             <p>Kullanıcının genel profili ve spor durumu (toplam mesafe, toplam süre, aktivite sayısı) gösterilir. Kullanıcının yeni aktivite başlatabileceği ve geçmiş aktiviteleri görüntüleyebileceği butonlar bulunur.</p>
-            <img src="assets/map-tracker/Screenshot_20240719_125727.png" alt="Dashboard">
+            <img src="old/assets/map-tracker/Screenshot_20240719_125727.png" alt="Dashboard">
         </div>
 
         <div class="section">
             <h3><i class="fas fa-walking icon"></i>4. Yeni Aktivite Ekranı </h3>
             <p>Kullanıcı, bu ekranda yürüyüş/koşu aktivitesini başlatıp bitirebilir. Aktif olunan süreçte kullanıcı, mevcut konumunu ve rota bilgisini harita üzerinde görebilir. Aktif aktivitenin toplam mesafesi, geçen süresi ve ortalama hızı anlık olarak güncellenir. Aktivite sonuçları Google Firestore veritabanına kaydedilir. Güncel hava durumu bilgisi OpenWeatherMap API'sinden alınır ve gösterilir.</p>
-            <img src="assets/map-tracker/Screenshot_20240719_125701.png" alt="Yeni Aktivite Ekranı">
+            <img src="old/assets/map-tracker/Screenshot_20240719_125701.png" alt="Yeni Aktivite Ekranı">
         </div>
 
         <div class="section">
             <h3><i class="fas fa-history icon"></i>5. Aktivite Geçmiş Hareketleri İçin Liste Ekranı </h3>
             <p>Kullanıcının geçmiş aktivitelerini listeleyen bir ekran. Liste satırlarında tarih, yapılan mesafe ve detay butonları yer alır.</p>
-            <img src="assets/map-tracker/Screenshot_20240719_125712.png" alt="Aktivite Geçmiş Hareketleri">
+            <img src="old/assets/map-tracker/Screenshot_20240719_125712.png" alt="Aktivite Geçmiş Hareketleri">
         </div>
 
         <div class="section">
             <h3><i class="fas fa-info-circle icon"></i>6. Aktivite Geçmiş Detay Ekranı</h3>
             <p>Geçmiş aktiviteler listesinden seçilen detay ekranı açılır. Rota, toplam mesafe ve süre Google Firestore veritabanından alınarak gösterilir.</p>
-            <img src="assets/map-tracker/Screenshot_20240719_125718.png" alt="Aktivite Geçmiş Detay">
+            <img src="old/assets/map-tracker/Screenshot_20240719_125718.png" alt="Aktivite Geçmiş Detay">
         </div>
 
         <div class="section">
             <h3><i class="fas fa-database icon"></i>7. Firebase ve Firestore Veritabanı</h3>
             <p>Firebase ve Firestore yapılandırması ve veri formatları ile ilgili örnek kayıtlar ve ekran görüntüleri proje içine eklenmelidir.</p>
-            <img src="assets/map-tracker/img.png" alt="Firebase Veritabanı">
-            <img src="assets/map-tracker/img_1.png" alt="Firebase Veritabanı">
-            <img src="assets/map-tracker/img_2.png" alt="Firebase Veritabanı">
+            <img src="old/assets/map-tracker/img.png" alt="Firebase Veritabanı">
+            <img src="old/assets/map-tracker/img_1.png" alt="Firebase Veritabanı">
+            <img src="old/assets/map-tracker/img_2.png" alt="Firebase Veritabanı">
         </div>
 
         <div class="highlight">
